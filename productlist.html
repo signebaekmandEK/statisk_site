@@ -4,72 +4,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>productlist</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=BBH+Hegarty&family=Bowlby+One&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Lexend:wght@100..900&family=Montserrat:wght@700&family=News+Cycle:wght@400;700&family=Sora:wght@500&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
 </head>
 
 <body>
+    <header>
+        <h1>FashionRUS</h1>
+    </header>
+
     <main>
         <h2>Accessories</h2>
 
-
         <container class="product-list-container">
-            <article class="product-card" href="product.html" id="product">
 
-                <img src="https://kea-alt-del.dk/t7/images/webp/640/1526.webp" alt="produkt1">
-                <h3>PUMA - Backpack</h3>
+            <div class="product-gallery">
 
-                <p class="productdisplayname">Big Cat Backpack Black</p>
-                <p class="category">Accessories - Bag</p>
-                <p class="gender">Unisex</p>
-                <p class="usagetype">Sports</p>
-                <p class="price">1299 kr.</p>
+                <article class="product-card" href="product.html" id="product">
 
-                <button>Buy Now</button>
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1526.webp" alt="produkt1">
+                    <h3>PUMA</h3>
 
-            </article>
+                    <p class="productdisplayname">Big Cat Backpack Black</p>
+                    <p class="category">Bag</p>
 
-            <article class="product-card" href="product.html" id="product">
-                <img src="https://kea-alt-del.dk/t7/images/webp/640/1525.webp" alt="produkt1">
-                <p class="discount">SALE 55%</p>
+                    <p class="price">1299 kr.</p>
 
-                <h3>PUMA - Backpacks</h3>
-                <p class="productdisplayname">Deck Navy Blue Backpack</p>
-                <p class="category">Accessories - Bag</p>
-                <p class="gender">Unisex</p>
-                <p class="usagetype">Casual</p>
+                    <a class=productsite href="product.html">Buy Now</a>
 
-                <p class="price">1299 kr.</p>
-                <p class="saleprice">Now ... kr. </p>
+                </article>
 
-                <button>Buy Now</button>
-            </article>
+                <article class="product-card" href="product.html">
 
-            <article class="product-card" href="product.html" id="product">
-                <img src="https://kea-alt-del.dk/t7/images/webp/640/1532.webp" alt="produkt1">
-                <p class="soldout">SOLD OUT</p>
+                    <div class="sale-product">
+                        <img src="https://kea-alt-del.dk/t7/images/webp/640/1525.webp" alt="produkt1"
+                            style="width:100%;">
+                        <div class="centered">SALE 55%</div>
+                    </div>
 
-                <h3>PUMA - T-shirt</h3>
-                <p class="productdisplayname">Grey Leaping Cat T-shirt</p>
-                <p class="category">Accessories - T-shirt</p>
-                <p class="gender">Unisex</p>
-                <p class="usagetype">Casual</p>
+                    <h3>PUMA</h3>
+                    <p class="productdisplayname">Deck Navy Blue Backpack</p>
+                    <p class="category">Bag</p>
+                    <p class="price">Now 1299 kr.</p>
+                    <a class=productsite href="product.html">Buy Now</a>
+                </article>
 
-                <p class="price">899 kr.</p>
-                <button>Buy Now</button>
-            </article>
+                <article class="product-card" href="product.html" id="product">
+                    <div class="soldout-product">
+                        <img src="https://kea-alt-del.dk/t7/images/webp/640/1532.webp" alt="produkt2"
+                            style="width:100%;">
+                        <div class="blured">SOLD OUT</div>
+                    </div>
 
-            <article class="product-card" href="product.html" id="product">
-                <img src="https://kea-alt-del.dk/t7/images/webp/640/1531.webp" alt="produkt1">
+                    <h3>PUMA</h3>
+                    <p class="productdisplayname">Grey Leaping Cat T-shirt</p>
+                    <p class="category">T-shirt</p>
 
-                <h3>PUMA - T-shirt</h3>
-                <p class="category">Accessories - T-shirt</p>
-                <p class="productdisplayname">Grey Solid Round Neck T-Shirt</p>
-                <p class="gender">Unisex</p>
-                <p class="usagetype">Casual</p>
+                    <p class="price">899 kr.</p>
 
-                <p class="price">799 kr.</p>
-                <button>Buy Now</button>
-            </article>
+                    <a class=productsite href="product.html">Buy Now</a>
+                </article>
+
+                <article class="product-card" href="product.html" id="product">
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1531.webp" alt="produkt1">
+
+                    <h3>PUMA</h3>
+                    <p class="productdisplayname">Grey Solid Round Neck T-Shirt</p>
+                    <p class="category">T-shirt</p>
+
+                    <p class="price">799 kr.</p>
+
+                    <a class=productsite href="product.html">Buy Now</a>
+                </article>
+
+                <article class="product-card" href="product.html" id="product">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1526.webp" alt="produkt1">
+                    <h3>PUMA</h3>
+
+                    <p class="productdisplayname">Big Cat Backpack Black</p>
+                    <p class="category">Bag</p>
+                    <p class="price">1299 kr.</p>
+
+                    <a class=productsite href="product.html">Buy Now</a>
+
+                </article>
+
+                <article class="product-card" href="product.html" id="product">
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1531.webp" alt="produkt1">
+
+                    <h3>PUMA</h3>
+                    <p class="productdisplayname">Grey Solid Round Neck T-Shirt</p>
+                    <p class="category">T-shirt</p>
+                    <p class="price">799 kr.</p>
+                    <a class=productsite href="product.html">Buy Now</a>
+                </article>
+                <article class="product-card" href="product.html" id="product">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1526.webp" alt="produkt1">
+                    <h3>PUMA</h3>
+
+                    <p class="productdisplayname">Big Cat Backpack Black</p>
+                    <p class="category">Bag</p>
+
+                    <p class="price">1299 kr.</p>
+
+                    <a class=productsite href="product.html">Buy Now</a>
+
+                </article>
+
+                <article class="product-card" href="product.html" id="product">
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1531.webp" alt="produkt1">
+
+                    <h3>PUMA</h3>
+                    <p class="productdisplayname">Grey Solid Round Neck T-Shirt</p>
+                    <p class="category">T-shirt</p>
+
+                    <p class="price">799 kr.</p>
+                    <a class=productsite href="product.html">Buy Now</a>
+                </article>
+            </div>
         </container>
     </main>
 </body>
