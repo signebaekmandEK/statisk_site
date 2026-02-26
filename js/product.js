@@ -16,7 +16,7 @@ function show(data) {
                  <div class="product">
                     <h3>${data.brandname}</h3>
                     <p class="productdisplayname">${data.productdisplayname}</p>
-                    <p class="size">ONE SIZE</p>
+                    <p class="gender">${data.gender}</p>
                     <p class="price"> Price: ${data.price} KR.</p>
                     <a class="productsite" href="product.html">Buy Now</a>
                     <br>
