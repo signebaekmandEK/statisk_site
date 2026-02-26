@@ -39,7 +39,6 @@ function show(data) {
                 </div>
                 </div>
                  </div>
-
         </section>`;
 }
 
