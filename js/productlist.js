@@ -1,40 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+const id = 1526;
+const productURL = "https://kea-alt-del.dk/t7/api/products/" + id;
+const productcontainer = document.querySelector("#productContainer");
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>productlist</title>
-    <link rel="stylesheet" href="style.css">
+function getData() {
+  fetch(productURL).then((res) => res.json().then((data) => show(data)));
+}
 
+function show(data) {
+  productcontainer.innerHTML = `  <h2>Accessories</h2>
+  <section class="product-list-container">
 
-</head>
+                <article class="product-card">
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/${id}.webp" alt="produkt1">
+                    <h3>${data.brandname}</h3>
 
-<body>
-    <header>
-        <h1>FashionRUS</h1>
-    </header>
+                    <p class="productdisplayname">${data.productdisplayname}</p>
+                    <p class="category">${data.subcategory}</p>
 
-    <main id="productContainer">
-        <h2>Accessories</h2>
+                    <p class="price">${data.price} KR.</p>
 
-        <section class="product-list-container">
+                    <a class="productsite" href="product.html">Buy Now</a>
 
-            <article class="product-card">
-
-                <img src="https://kea-alt-del.dk/t7/images/webp/640/1526.webp" alt="produkt1">
-                <h3>PUMA</h3>
-
-                <p class="productdisplayname">Big Cat Backpack Black</p>
-                <p class="category">Bag</p>
-
-                <p class="price">1299 kr.</p>
-
-                <a class="productsite" href="product.html">Buy Now</a>
-
-            </article>
-
-            <article class="product-card">
+                </article>
+                 <article class="product-card">
 
                 <div class="sale-product">
                     <img src="https://kea-alt-del.dk/t7/images/webp/640/1525.webp" alt="produkt1" style="width:100%;">
@@ -44,7 +32,7 @@
                 <h3>PUMA</h3>
                 <p class="productdisplayname">Deck Navy Blue Backpack</p>
                 <p class="category">Bag</p>
-                <p class="price">Now 1299 kr.</p>
+                <p class="price">Now 1299 KR.</p>
                 <a class="productsite" href="product.html">Buy Now</a>
             </article>
 
@@ -58,7 +46,8 @@
                 <p class="productdisplayname">Grey Leaping Cat T-shirt</p>
                 <p class="category">T-shirt</p>
 
-                <p class="price">899 kr.</p>
+                <p class="price">899 KR.</p>
+                <p class="product-status">${data.stock ? "In Stock" : "Out of Stock"}</p>
 
                 <a class="productsite" href="product.html">SOLD OUT</a>
             </article>
@@ -70,7 +59,7 @@
                 <p class="productdisplayname">Grey Solid Round Neck T-Shirt</p>
                 <p class="category">T-shirt</p>
 
-                <p class="price">799 kr.</p>
+                <p class="price">799 KR.</p>
 
                 <a class="productsite" href="product.html">Buy Now</a>
             </article>
@@ -82,7 +71,7 @@
 
                 <p class="productdisplayname">Big Cat Backpack Black</p>
                 <p class="category">Bag</p>
-                <p class="price">1299 kr.</p>
+                <p class="price">1299 KR.</p>
 
                 <a class="productsite" href="product.html">Buy Now</a>
 
@@ -94,7 +83,7 @@
                 <h3>PUMA</h3>
                 <p class="productdisplayname">Grey Solid Round Neck T-Shirt</p>
                 <p class="category">T-shirt</p>
-                <p class="price">799 kr.</p>
+                <p class="price">799 KR.</p>
                 <a class="productsite" href="product.html">Buy Now</a>
             </article>
             <article class="product-card">
@@ -105,7 +94,7 @@
                 <p class="productdisplayname">Big Cat Backpack Black</p>
                 <p class="category">Bag</p>
 
-                <p class="price">1299 kr.</p>
+                <p class="price">1299 KR.</p>
 
                 <a class="productsite" href="product.html">Buy Now</a>
 
@@ -118,13 +107,10 @@
                 <p class="productdisplayname">Grey Solid Round Neck T-Shirt</p>
                 <p class="category">T-shirt</p>
 
-                <p class="price">799 kr.</p>
+                <p class="price">799 KR.</p>
                 <a class="productsite" href="product.html">Buy Now</a>
             </article>
-        </section>
-    </main>
-    <script src="js/productlist.js"></script>
+        </section>`;
+}
 
-</body>
-
-</html>
+getData();
