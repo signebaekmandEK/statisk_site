@@ -1,4 +1,6 @@
-const id = 1526;
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
 const productURL = "https://kea-alt-del.dk/t7/api/products/" + id;
 const productcontainer = document.querySelector("#product");
 
@@ -7,6 +9,7 @@ function getData() {
 }
 
 function show(data) {
+  document.querySelector("h2").textContent = data ? data.articletype : "Product Details";
   productcontainer.innerHTML = `<section class="card">
 
            
