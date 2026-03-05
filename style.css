@@ -28,9 +28,9 @@ a {
   font-family: "instrument sans", sans-serif;
   color: #393840;
 }
-
-h1 {
+header a {
   font-family: "montserrat", sans-serif;
+  text-decoration: none;
 }
 
 h2 {
@@ -70,7 +70,6 @@ p {
 .category_list_container .categoryy:hover {
   background-color: #e3b5b5;
   color: #594842;
-  border-color: #594842;
 }
 
 .categoryy {
@@ -115,22 +114,52 @@ p {
 .price {
   padding-top: 30px;
 }
+
+.buttons_productlist {
+  margin: 30px;
+}
+.filter-btn {
+  display: block;
+  padding: 10px;
+  width: 160px;
+  height: 40px;
+  background-color: #393840;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+.filter-btn:hover {
+  background-color: #736d6c;
+  color: white;
+}
+
+/* show more knap */
+.productsiteSM:hover {
+  background-color: #faecae;
+  color: #594842;
+  border-color: #a8aba3e9;
+}
+
 /* buy now knap */
-.productsite {
+.productsite,
+.productsiteSM {
   display: inline-block;
   margin-top: 20px;
   border: 2px solid;
-  border-color: #736d6c;
   background-color: #736d6c;
   padding: 10px;
   color: #f2f2f2;
   text-decoration: none;
   text-align: center;
+  border-radius: 5px;
 }
-
 .productsite:hover {
-  background-color: #e3b5b5;
+  background-color: #d8fbbb;
   color: #594842;
+  border-color: #a8aba3e9;
 }
 
 /* --- sale product --- */
@@ -262,6 +291,9 @@ p {
     padding: 0 40px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+  }
+  .filter-btn {
+    display: inline-block;
   }
 
   /* --- product --- */

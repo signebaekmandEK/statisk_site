@@ -1,10 +1,25 @@
-const listURL = "https://kea-alt-del.dk/t7/api/products?articletype=Backpacks";
+const params = new URLSearchParams(window.location.search);
+const category = params.get("category");
+console.log(category);
+
+const listURL = category ? `https://kea-alt-del.dk/t7/api/products?category=${category}` : "https://kea-alt-del.dk/t7/api/products";
+
 const listContainer = document.querySelector(".product-list-container");
+document.querySelector("h2").textContent = category ? category : "All Products";
+
+const sortPriceBtn = document.querySelector("#sortPriceBtn");
+const filterWomenBtn = document.querySelector("#filterWomenBtn");
+
+let allProducts = [];
 
 function getProducts() {
-  fetch(listURL).then((res) => res.json().then((products) => showProducts(products)));
+  fetch(listURL)
+    .then((res) => res.json())
+    .then((products) => {
+      allProducts = products;
+      showProducts(allProducts);
+    });
 }
-
 function showProducts(products) {
   // Start med tom container
   listContainer.innerHTML = "";
@@ -12,8 +27,9 @@ function showProducts(products) {
   // products er et array af objekter
   products.forEach((product) => {
     listContainer.innerHTML += `
+ 
 <article class="product-card">
-
+                  
                     <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="produkt1">
                     <h3>${product.brandname}</h3>
 
@@ -22,10 +38,24 @@ function showProducts(products) {
 
                     <p class="price">${product.price} KR.</p>
 
-                    <a class="productsite" href="product.html">Buy Now</a>
+                    <a class="productsiteSM" href="product.html?id=${product.id}">Show More</a>
 
                 </article>`;
   });
 }
+
+function sortByPriceAsc() {
+  const sorted = [...allProducts].sort((a, b) => a.price - b.price);
+  showProducts(sorted);
+}
+sortPriceBtn.addEventListener("click", sortByPriceAsc);
+
+function filterByGender(targetGender) {
+  const filtered = allProducts.filter((product) => (product.gender || "").toLowerCase() === targetGender.toLowerCase());
+  showProducts(filtered);
+  console.log(filtered);
+}
+
+filterWomenBtn.addEventListener("click", () => filterByGender("Women"));
 
 getProducts();
