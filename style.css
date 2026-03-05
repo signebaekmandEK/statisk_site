@@ -31,6 +31,9 @@ a {
 header a {
   font-family: "montserrat", sans-serif;
   text-decoration: none;
+  font-size: 30px;
+  border-bottom: #934967 5px solid;
+  padding: 20px;
 }
 
 h2 {
@@ -138,7 +141,7 @@ p {
 
 /* show more knap */
 .productsiteSM:hover {
-  background-color: #faecae;
+  background-color: #ffefa8;
   color: #594842;
   border-color: #a8aba3e9;
 }
