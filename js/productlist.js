@@ -8,6 +8,7 @@ const listContainer = document.querySelector(".product-list-container");
 document.querySelector("h2").textContent = category ? category : "All Products";
 
 const sortPriceBtn = document.querySelector("#sortPriceBtn");
+const filterWomenBtn = document.querySelector("#filterWomenBtn");
 
 let allProducts = [];
 
@@ -37,7 +38,7 @@ function showProducts(products) {
 
                     <p class="price">${product.price} KR.</p>
 
-                    <a class="productsite" href="product.html?id=${product.id}">Buy Now</a>
+                    <a class="productsiteSM" href="product.html?id=${product.id}">Show More</a>
 
                 </article>`;
   });
@@ -47,7 +48,14 @@ function sortByPriceAsc() {
   const sorted = [...allProducts].sort((a, b) => a.price - b.price);
   showProducts(sorted);
 }
-
 sortPriceBtn.addEventListener("click", sortByPriceAsc);
+
+function filterByGender(targetGender) {
+  const filtered = allProducts.filter((product) => (product.gender || "").toLowerCase() === targetGender.toLowerCase());
+  showProducts(filtered);
+  console.log(filtered);
+}
+
+filterWomenBtn.addEventListener("click", () => filterByGender("Women"));
 
 getProducts();

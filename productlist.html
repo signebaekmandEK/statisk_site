@@ -4,19 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>productlist</title>
+    <title>Productlist</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <h1>FashionRUS</h1>
+        <a href="index.html">
+            <h1>FashionRUS</h1>
+        </a>
     </header>
 
     <h2>Products</h2>
 
     <main id="productContainer">
-        <button id="sortPriceBtn">Sorter efter pris</button>
+        <div class="buttons_productlist">
+            <button id="sortPriceBtn" class="filter-btn">Sort price: Low - High</button>
+            <button id="filterWomenBtn" class="filter-btn">Show Women</button>
+        </div>
         <section class="product-list-container">
             <article class="product-card">
 
