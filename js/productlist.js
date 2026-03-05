@@ -7,10 +7,18 @@ const listURL = category ? `https://kea-alt-del.dk/t7/api/products?category=${ca
 const listContainer = document.querySelector(".product-list-container");
 document.querySelector("h2").textContent = category ? category : "All Products";
 
-function getProducts() {
-  fetch(listURL).then((res) => res.json().then((products) => showProducts(products)));
-}
+const sortPriceBtn = document.querySelector("#sortPriceBtn");
 
+let allProducts = [];
+
+function getProducts() {
+  fetch(listURL)
+    .then((res) => res.json())
+    .then((products) => {
+      allProducts = products;
+      showProducts(allProducts);
+    });
+}
 function showProducts(products) {
   // Start med tom container
   listContainer.innerHTML = "";
@@ -34,5 +42,12 @@ function showProducts(products) {
                 </article>`;
   });
 }
+
+function sortByPriceAsc() {
+  const sorted = [...allProducts].sort((a, b) => a.price - b.price);
+  showProducts(sorted);
+}
+
+sortPriceBtn.addEventListener("click", sortByPriceAsc);
 
 getProducts();
